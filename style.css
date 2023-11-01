@@ -40,7 +40,7 @@ footer {
   padding: auto;
 }
 .container {
-  background-color: #7f8c97;
+  background-color: #aaacb5;
   max-width: 600px;
   margin: 0 auto;
   margin-top: 10px;
@@ -87,14 +87,14 @@ footer {
 }
 
 .top-container {
-  background-color: #dee1e4;
+  background-color: #e2e3e6;
   border-radius: 10px;
   line-height: 25px;
   padding: 5px;
   margin: 10px;
 }
 .day-forecast {
-  background-color: #dee1e4;
+  background-color: #e2e3e6;
   border-radius: 10px;
   line-height: 25px;
   padding: 5px;
