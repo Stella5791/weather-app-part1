@@ -34,7 +34,7 @@ function displayDate(currentDate) {
     minutes = `0${minutes}`;
   }
 
-  return `${day} ${date} ${month}, ${hours}:${minutes}`;
+  return `${day} ${date}, ${hours}:${minutes}`;
 }
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;

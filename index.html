@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>weatherApp-testing</title>
+    <title>weatherApp-part1</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
@@ -24,145 +24,130 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root">
-      <div class="container">
-        <div class="top-container">
-          <form id="search-form">
-            <div class="input-group mb-3">
-              <input
-                type="search"
-                placeholder="Enter a city"
-                id="city-input"
-                class="form-control"
-                aria-describedby="button-addon2"
-              />
-              <button
-                class="btn btn-outline-primary button"
-                type="submit"
-                value="search"
-                id="searchCity"
-              >
-                <strong>Search</strong>
-              </button>
-              <button
-                class="btn btn-outline-secondary button"
-                type="submit"
-                id="currentLocation"
-              >
-                <strong>Current</strong>
-              </button>
-            </div>
-          </form>
+    <div class="container">
+      <form id="search-form">
+        <div class="input-group mb-3">
+          <input
+            type="search"
+            placeholder="Enter a city"
+            id="city-input"
+            class="form-control"
+            aria-describedby="button-addon2"
+          />
+          <button
+            class="btn btn-outline-primary button"
+            type="submit"
+            value="search"
+            id="searchCity"
+          >
+            <strong>Search</strong>
+          </button>
+          <button
+            class="btn btn-outline-secondary button"
+            type="submit"
+            id="currentLocation"
+          >
+            <strong>Current</strong>
+          </button>
+        </div>
+      </form>
+      <div class="top-container">
+        <h1 class="weather-app-city" id="city">London</h1>
 
-          <h1 id="city">London</h1>
-          <p id="date"></p>
-          <p id="description"></p>
-          <div class="row">
-            <div class="col-6">
-              <div class="clearfix">
-                <img
-                  src="images/sun-icon.jpg"
-                  class="weather-icon float-left"
-                  alt="sun-icon"
-                />
-
-                <span class="temperature float-left" id="temperature"></span>
-                <span class="units">
-                  <a href="#" id="celsius-link">°C</a> |
-                  <a href="#" id="fahrenheit-link">°F</a></span
-                >
-              </div>
+        <div class="row weather-app-data">
+          <div class="col weather-app-temperature-container">
+            <div id="icon">
+              <img src="images/sun-icon.jpg" class="weather-icon" />
             </div>
-            <div class="col-6">
-              <ul class="more-info">
-                <li>Humidity: <span id="humidity"> </span>%</li>
-                <li>Wind: <span id="wind"></span> kph</li>
-              </ul>
-            </div>
+            <div class="weather-app-temperature" id="temperature"></div>
+            <div class="weather-app-unit">°C</div>
+          </div>
+          <div class="col">
+            <ul class="weather-app-details">
+              <li id="date">Wednesday 1, 15.21</li>
+              <li id="description">Drizzle</li>
+              <li>Humidity: <span id="humidity"> </span>%</li>
+              <li>Wind: <span id="wind"></span> kph</li>
+            </ul>
           </div>
         </div>
-        <div class="forecast-section">
-          <h5><strong>Weather in Cordoba for the next 5 days</strong></h5>
-          <div class="weather-forecast">
-            <div class="row day-forecast">
-              <div class="col-3 day">Monday</div>
-
-              <div class="col-1">
-                <img
-                  src="images/sun-icon.jpg"
-                  class="day-forecast-icon"
-                  alt="sun-icon"
-                />
-              </div>
-              <div class="col-2 temp">20°| 6°</div>
-              <div class="col-2 wind">💨 10 k/h</div>
-              <div class="col-2 hum">💧 5%</div>
-              <div class="col-2 rain">🌧 0%</div>
-            </div>
-            <div class="row day-forecast">
-              <div class="col-3 day">Tuesday</div>
-
-              <div class="col-1">
-                <img
-                  src="images/rain-icon.jpg"
-                  class="day-forecast-icon"
-                  alt="rain-icon"
-                />
-              </div>
-              <div class="col-2 temp">20° | 6°</div>
-              <div class="col-2 wind">💨 5 k/h</div>
-              <div class="col-2 hum">💧 100%</div>
-              <div class="col-2 rain">🌧 100%</div>
-            </div>
-            <div class="row day-forecast">
-              <div class="col-3 day">Wednesday</div>
-
-              <div class="col-1">
-                <img
-                  src="images/partial-cloud-icon.jpg"
-                  class="day-forecast-icon"
-                  alt="partial-cloud-icon"
-                />
-              </div>
-              <div class="col-2 temp">20° | 6°</div>
-              <div class="col-2 wind">💨 6 k/h</div>
-              <div class="col-2 hum">💧 5%</div>
-              <div class="col-2 rain">🌧 2%</div>
-            </div>
-            <div class="row day-forecast">
-              <div class="col-3 day">Thursday</div>
-
-              <div class="col-1">
-                <img
-                  src="images/cloud-rain-icon.jpg"
-                  class="day-forecast-icon"
-                  alt="cloud-rain-icon"
-                />
-              </div>
-              <div class="col-2 temp">20° | 6°</div>
-              <div class="col-2 wind">💨 5 k/h</div>
-              <div class="col-2 hum">💧 90%</div>
-              <div class="col-2 rain">🌧 70%</div>
-            </div>
-            <div class="row day-forecast">
-              <div class="col-3 day">Friday</div>
-
-              <div class="col-1">
-                <img
-                  src="images/sun-icon.jpg"
-                  class="day-forecast-icon"
-                  alt="sun-icon"
-                />
-              </div>
-              <div class="col-2 temp">20° | 6°</div>
-              <div class="col-2 wind">💨 8 k/h</div>
-              <div class="col-2 hum">💧 2%</div>
-              <div class="col-2 rain">🌧 0%</div>
-            </div>
-          </div>
-        </div>
-        <footer>Coded by Stella Bullo</footer>
       </div>
+      <div class="forecast-section">
+        <h2><strong>Weather in Cordoba for the next 5 days</strong></h2>
+        <div class="weather-forecast">
+          <div class="row day-forecast">
+            <div class="col-3 day">Monday</div>
+
+            <div class="col-2">
+              <img
+                src="images/sun-icon.jpg"
+                class="day-forecast-icon"
+                alt="sun-icon"
+              />
+            </div>
+            <div class="col-2 temp">20°| 6°</div>
+            <div class="col-2 wind">💨 10 k/h</div>
+            <div class="col-2 hum">💧 5%</div>
+          </div>
+          <div class="row day-forecast">
+            <div class="col-3 day">Tuesday</div>
+
+            <div class="col-2">
+              <img
+                src="images/sun-icon.jpg"
+                class="day-forecast-icon"
+                alt="rain-icon"
+              />
+            </div>
+            <div class="col-2 temp">20° | 6°</div>
+            <div class="col-2 wind">💨 5 k/h</div>
+            <div class="col-2 hum">💧 100%</div>
+          </div>
+          <div class="row day-forecast">
+            <div class="col-3 day">Wednesday</div>
+
+            <div class="col-2">
+              <img
+                src="images/sun-icon.jpg"
+                class="day-forecast-icon"
+                alt="partial-cloud-icon"
+              />
+            </div>
+            <div class="col-2 temp">20° | 6°</div>
+            <div class="col-2 wind">💨 6 k/h</div>
+            <div class="col-2 hum">💧 5%</div>
+          </div>
+          <div class="row day-forecast">
+            <div class="col-3 day">Thursday</div>
+
+            <div class="col-2">
+              <img
+                src="images/sun-icon.jpg"
+                class="day-forecast-icon"
+                alt="cloud-rain-icon"
+              />
+            </div>
+            <div class="col-2 temp">20° | 6°</div>
+            <div class="col-2 wind">💨 5 k/h</div>
+            <div class="col-2 hum">💧 90%</div>
+          </div>
+          <div class="row day-forecast">
+            <div class="col-3 day">Friday</div>
+
+            <div class="col-2">
+              <img
+                src="images/sun-icon.jpg"
+                class="day-forecast-icon"
+                alt="sun-icon"
+              />
+            </div>
+            <div class="col-2 temp">20° | 6°</div>
+            <div class="col-2 wind">💨 8 k/h</div>
+            <div class="col-2 hum">💧 2%</div>
+          </div>
+        </div>
+      </div>
+      <footer>Coded by Stella Bullo</footer>
     </div>
 
     <script src="index.js"></script>
