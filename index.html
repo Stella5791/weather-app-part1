@@ -30,7 +30,7 @@
           <input
             type="search"
             placeholder="Enter a city"
-            id="city-input"
+            id="search-form-input"
             class="form-control"
             aria-describedby="button-addon2"
           />
@@ -56,9 +56,7 @@
 
         <div class="row weather-app-data">
           <div class="col weather-app-temperature-container">
-            <div id="icon">
-              <img src="images/sun-icon.jpg" class="weather-icon" />
-            </div>
+            <div id="icon"></div>
             <div class="weather-app-temperature" id="temperature"></div>
             <div class="weather-app-unit">°C</div>
           </div>
@@ -73,7 +71,9 @@
         </div>
       </div>
       <div class="forecast-section">
-        <h2><strong>Weather in Cordoba for the next 5 days</strong></h2>
+        <h2>
+          <strong>Weather in Cordoba for the next 5 days</strong>
+        </h2>
         <div class="weather-forecast">
           <div class="row day-forecast">
             <div class="col-3 day">Monday</div>
