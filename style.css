@@ -71,14 +71,14 @@ footer {
   display: flex;
 }
 .weather-icon {
-  width: 85px;
-  height: 85px;
+  width: 100px;
+  height: 100px;
 }
 .weather-app-temperature {
-  font-size: 80px;
-  line-height: 80px;
+  font-size: 70px;
+  line-height: 70px;
   font-weight: bold;
-  margin-top: 6px;
+  margin-top: 15px;
 }
 
 .weather-app-unit {
