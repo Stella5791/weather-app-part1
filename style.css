@@ -24,6 +24,7 @@ li {
 }
 a {
   text-decoration: none;
+  color: #ebe6f2;
 }
 h2 {
   color: rgb(245, 239, 239);
@@ -40,7 +41,7 @@ footer {
   padding: auto;
 }
 .container {
-  background-color: #a3a3a3;
+  background-color: #7b7682;
   max-width: 600px;
   margin: 0 auto;
   margin-top: 10px;
@@ -59,6 +60,10 @@ footer {
   font-style: italic;
   text-transform: capitalize;
   font-variant-caps: normal;
+}
+#humidity,
+#wind {
+  font-weight: bolder;
 }
 .button {
   color: white;
@@ -87,18 +92,19 @@ footer {
 }
 
 .top-container {
-  background-color: #e5e4e2;
+  background-color: #ebe6f2;
+
   border-radius: 10px;
   line-height: 25px;
   padding: 5px;
   margin: 10px;
 }
 .form-control {
-  background-color: #e5e4e2;
+  background-color: #ebe6f2;
 }
 
 .day-forecast {
-  background-color: #e5e4e2;
+  background-color: #ebe6f2;
   border-radius: 10px;
   line-height: 25px;
   padding: 5px;
